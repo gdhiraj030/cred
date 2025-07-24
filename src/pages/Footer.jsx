@@ -3,7 +3,7 @@ import { logo } from "../assets/icons/icons";
 
 function Footer() {
   return (
-    <div className="flex  items-center py-30 cursor-pointer bg-gray-950 text-white">
+    <div className="flex py-40 items-center py-30 cursor-pointer bg-gray-950 text-white">
       <div>
         <img src={logo} alt="" />
       </div>
