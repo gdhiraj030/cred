@@ -69,6 +69,7 @@ function Cards() {
         scrollTrigger: {
           trigger: container.current,
           start: "top 18%",
+          endTrigger: cardsRef.current,
           end: () => `+=${totalWidth}`,
           pin: true,
           scrub: true,

@@ -4,31 +4,34 @@ import AnimatedScrollText from "../components/AnimatedScrollText";
 
 function Oddsfall() {
   return (
-    <div className="relative w-full h-[80vh] mt-40 mb-40 overflow-hidden">
-      <div className="h-[80vh] w-full absolute top-0 left-0">
+    <section className="relative w-full h-[60vh] md:h-[80vh] mt-20 md:mt-32 mb-20 md:mb-40 overflow-hidden">
+      
+      {/* Background Video */}
+      <div className="absolute inset-0">
         <video
-          className="h-full w-full object-cover"
+          className="w-full h-full object-cover"
           muted
           loop
           autoPlay
           src={ballvideo}
-        ></video>
+        />
       </div>
-      <div className="flex flex-col justify-center items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white ">
+
+      {/* Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
         <AnimatedScrollText
-          text="Feels  the  odds  fall"
-          className="text-8xl font bold tracking-tighter"
+          text="Feels the odds fall"
+          className="text-3xl md:text-6xl lg:text-8xl font-bold tracking-tighter"
         />
         <AnimatedScrollText
-          text="in  your  favor"
-          className="text-8xl font bold tracking-tight  "
+          text="in your favor"
+          className="text-3xl md:text-6xl lg:text-8xl font-bold tracking-tight"
         />
-        <p className=" px-10 py-6 text-2xl">
-          unlock cashback,exclusive awards from select brands, ans special to
-          curated products and experiences.
+        <p className="mt-4 md:mt-6 text-base md:text-xl max-w-2xl text-zinc-100">
+          Unlock cashback, exclusive rewards from select brands, and access to curated products and experiences.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 

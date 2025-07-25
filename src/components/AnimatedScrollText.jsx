@@ -7,6 +7,7 @@ function AnimatedScrollText({
   stagger = 0.03,
   delay = 0,
   className = "",
+  spanClassName = "",
   ...props
 }) {
   return (
@@ -16,6 +17,8 @@ function AnimatedScrollText({
       viewport={{ once: true, amount: 0.2 }}
       className={`flex overflow-hidden ${className}`}
       {...props}
+      aria-label={text}
+      role="heading"
     >
       {text.split("").map((char, index) =>
         char === " " ? (
@@ -23,13 +26,13 @@ function AnimatedScrollText({
         ) : (
           <motion.span
             key={index}
-            className={`inline-block  ${className}`}
+            className={`inline-block ${spanClassName}`}
             variants={{
               initial: { y: "100%" },
               inView: { y: 0 },
             }}
             transition={{
-              duration: duration,
+              duration,
               delay: index * stagger + delay,
               ease: "easeInOut",
             }}

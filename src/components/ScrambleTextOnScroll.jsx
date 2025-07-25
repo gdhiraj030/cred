@@ -24,6 +24,8 @@ function ScrambleTextOnScroll({
 
   useGSAP(
     () => {
+      if (!containerRef.current) return;
+
       const textElements = containerRef.current.querySelectorAll(".text");
 
       textElements.forEach((el) => {
@@ -61,16 +63,21 @@ function ScrambleTextOnScroll({
   return (
     <div
       ref={containerRef}
-      className={`flex flex-col  text-white  ${className}`}
+      className={`flex flex-col text-center w-full  text-white ${className}`}
     >
-      <div className="relative max-w-4xl mx-auto ">
+      <div className="relative max-w-4xl mx-auto">
         {sentences.map((sentence, index) => (
           <div
             key={index}
-            className={` flex flex-wrap gap-2  ${className}`}
+            className="flex flex-wrap gap-2 mb-2 justicent-left text-justify"
           >
             {sentence.split(" ").map((word, i) => (
-              <span key={i} className="text inline-block">
+              <span
+                key={i}
+                className="text inline-block"
+                aria-label={word}
+                role="text"
+              >
                 {word}
               </span>
             ))}
