@@ -7,13 +7,13 @@ import Domore from "./pages/Domore";
 import Oddsfall from "./pages/Oddsfall";
 import Footer from "./pages/Footer";
 import Marquee from "./components/Marquee";
-import Loader from "./components/Loader"; // Import loader
+import Loader from "./components/Loader"; 
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 10); // 2s delay
+    const timer = setTimeout(() => setIsLoading(false), 3000); 
     return () => clearTimeout(timer);
   }, []);
 
